@@ -1,0 +1,22 @@
+#installer composer (au cas ou vous ne l'auriez pas encore..)
+https://getcomposer.org/download
+
+# clonez le dépot  !
+git clone https://github.com/guillaume-L/blog.git
+
+# déplacez vous dans le dossier 
+cd blog
+# installez les dépendances !
+composer install
+
+# crééz la base de données
+php bin/console doctrine:database:blog
+
+# exécutez les migrations
+php bin/console doctrine:migrations:migrate
+
+# exécutez la fixture
+php bin/console doctrine:fixtures:load --no-interaction
+
+# lancez le serveur
+php bin/console server:run
