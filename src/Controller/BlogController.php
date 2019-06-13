@@ -45,7 +45,6 @@ class BlogController extends AbstractController
             $article = new Article();
         }
 
-        //methode pour recuperer des données depuis une class form
         $form = $this->createForm(ArticleType::class, $article);
 
         $form->handleRequest($request);

@@ -2,9 +2,9 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Category;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use App\Entity\Category;
 use App\Entity\Article;
 use App\Entity\Comment;
 use Faker;
@@ -21,7 +21,6 @@ class ArticleFixtures extends Fixture
                 ->setDescription($faker->paragraph());
 
             $manager->persist($category);
-
 
             for ($j = 1; $j <= mt_rand(4, 6); $j++) {
                 $article = new Article();

@@ -5,10 +5,27 @@
 {% block body %}
     {% for article in articles %}
     <section class="articles">
+        <div class="row">
+            <div class="indexTitle col-md-12">
         <h2>{{ article.title }}</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="indexImage col-md-12">
         <img src="{{ article.image }}">
-        <div class="metadata">ecrit le {{ article.createdAt | date('d/m/y') }} {{ article.createdAt | date('h:i') }} dans la categorie {{ article.category.title }}</div>
-        <{{ article.content | raw }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="indexCreatedAt col-md-3">
+            Ecrit le {{ article.createdAt | date('d/m/y') }} {{ article.createdAt | date('h:i') }}
+            </div>
+        <div class="indexCategory col-md-9">
+            Dans la categorie {{ article.category.title }}
+        </div>
+        </div>
+        <div class="indexContent col-md-12">
+        {{ article.content | raw }}
+        </div>
         <a href="{{ path('blog_show',{'id': article.id}) }}" class="btn btn-primary">lire la suite</a>
     </section>
     {% endfor %}

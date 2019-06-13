@@ -31,7 +31,7 @@
         <button type="submit" class="btn-btn-success">Valider</button>
         {{ form_end(commentForm) }}
             {% else %}
-                    <h5>il vous faut être connecter pour pouvoir commenter</h5>
+                    <h5>il faut être connecté pour pouvoir commenter</h5>
                     <a href="{{ path('security_login') }}" class="btn btn-primary">connectez vous!</a>
                 {% endif %}
     </section>
